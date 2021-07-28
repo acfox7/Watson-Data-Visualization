@@ -1,3 +1,9 @@
+.mainContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
 .graphsContainer {
   display: flex;
   justify-content: space-around;
