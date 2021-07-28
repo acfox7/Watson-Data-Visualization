@@ -1,5 +1,6 @@
 import React from 'react';
 import BarGraph from './BarGraph';
+import styles from './Main.module.css';
 
 class Main extends React.Component {
   render() {
@@ -8,7 +9,14 @@ class Main extends React.Component {
         <header>
           <h1>Test Bar Graph</h1>
         </header>
-        <BarGraph />
+        <div className={styles.graphsContainer}>
+          <BarGraph />
+          <BarGraph />
+          <BarGraph />
+          <BarGraph />
+          <BarGraph />
+          <BarGraph />
+        </div>
       </div>
     );
   }
