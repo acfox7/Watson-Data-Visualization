@@ -1,8 +1,16 @@
 import React from 'react';
+import BarGraph from './BarGraph';
 
 class Main extends React.Component {
   render() {
-    return <h1>Rendering is working</h1>;
+    return (
+      <div id="container">
+        <header>
+          <h1>Test Bar Graph</h1>
+        </header>
+        <BarGraph />
+      </div>
+    );
   }
 }
 
