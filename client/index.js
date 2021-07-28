@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 //import provider here when ready to connect to store
 //import store here when ready to connect to store
 //import style sheet here when have one
-import Main from './Main';
+import Routes from './Routes';
 
 ReactDOM.render(
   <div>
-    <Main />
+    <Routes />
   </div>,
   document.getElementById('app')
 );
