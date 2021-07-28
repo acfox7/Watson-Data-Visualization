@@ -7,3 +7,5 @@ router.use((req, res, next) => {
   error.status = 404;
   next(error);
 });
+
+module.exports = router;

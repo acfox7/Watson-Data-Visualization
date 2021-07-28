@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config({
 });
 const WATSON_KEY = process.env.WATSON_KEY;
 const WATSON_ACCESS_URL = process.env.WATSON_ACCESS_URL;
+const { Book } = require('../db');
 
 const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
   version: '2021-03-25',
@@ -14,18 +15,6 @@ const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
   }),
   serviceUrl: WATSON_ACCESS_URL,
 });
-
-const analyzeParams = {
-  features: {
-    entities: {
-      emotion: true,
-      sentiment: true,
-      limit: 6,
-    },
-    emotion: {},
-  },
-  text: 'Here I am providing you some sample text. This is just to make sure everything is working as intended. For more info, Michael is my boyfriend.',
-};
 
 async function WatsonCall(analyzeParams) {
   try {
@@ -37,4 +26,32 @@ async function WatsonCall(analyzeParams) {
   }
 }
 
-WatsonCall(analyzeParams);
+async function getExcerptForTest(bookId) {
+  try {
+    const book = await Book.findByPk(bookId);
+    //console.log('Excerpt: ', book.excerpt);
+    let condensedExcerpt = book.excerpt.replace(/[\r\n\t]/g, ' ');
+    //console.log(typeof condensedExcerpt);
+    return condensedExcerpt;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getExcerptForTest(1).then((value) => {
+  const analyzeParams = {
+    features: {
+      entities: {
+        emotion: true,
+        sentiment: true,
+        limit: 6,
+      },
+      emotion: {},
+    },
+    text: value,
+  };
+
+  WatsonCall(analyzeParams);
+});
+//let hpExcerpt = getExcerptForTest(1);
+//console.log(hpExcerpt());
