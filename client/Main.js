@@ -16,6 +16,7 @@ class Main extends React.Component {
           <BookInfoCard
             key={book.id}
             title={book.title}
+            author={book.author}
             imageURL={book.imageURL}
           />
         );
@@ -25,7 +26,7 @@ class Main extends React.Component {
         <h1>Book Data Loading ...</h1>
       </div>
     );
-    return <div id="mainContainer">{toRender}</div>;
+    return <div id={styles.mainContainer}>{toRender}</div>;
   }
 }
 

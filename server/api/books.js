@@ -9,7 +9,7 @@ const { Book } = require('../db');
 router.get('/', async (req, res, next) => {
   try {
     const books = await Book.findAll({
-      attributes: ['id', 'title', 'excerptTitle', 'imageURL'],
+      attributes: ['id', 'title', 'author', 'excerptTitle', 'imageURL'],
     });
     res.json(books);
   } catch (error) {
