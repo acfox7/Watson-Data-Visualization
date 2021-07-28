@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}

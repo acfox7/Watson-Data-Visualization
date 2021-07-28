@@ -22,14 +22,12 @@ NEED:
 
 - Express server set up to serve routes to main page and particular book/novel pages
 
-- look into chart.js and pairing same with react
-  - are additional libraries needed to accomplish this?
-- look into chart.js generally and using same with the data that we are going to get back from Watson
-
-First steps: - Watson - get clearer picture of the data that I will get back, how it is organized, etc. - Chart.js - get clearer picture of how this works and how it will need the data in order to show it - Chart.js with react - make sure this will work together and there is nothing special that needs to happen / what would need to happen - Determine exactly how I want to handle the Watson data - save it into DB or make new calls everytime to get the data
-
 Maybe look into if have time: - launching this app somehow - docker, Kubernetes, etc.
 
-TOMORROW: build react front end and just try to render any graphical data that I make up
+Next Steps:
 
-- can from there begin to build out more of a front-end and Watson stuff
+- Build out React Routes and Various Components
+
+- think through how I want to handle novel data and Watson data
+  - believe I will need to make Watson calls from my server rather than the frontend since I will need my API keys and such
+    - use dotenv package
