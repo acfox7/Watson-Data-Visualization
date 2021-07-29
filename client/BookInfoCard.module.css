@@ -1,15 +1,16 @@
 .singleBookInfo {
   display: flex;
   justify-content: space-around;
-  padding: 10px;
-  background: #7a9b76;
+  margin: 10px 5px 10px 5px;
+  background: #9ec5ab;
+  border-radius: 10px;
   /* margin-right: 5vw; */
 }
 
 .bookImage {
   display: flex;
   justify-content: center;
-  width: 25vh;
+  width: 20vh;
   height: 25vh;
   margin: 0;
   padding: 0;
@@ -21,16 +22,13 @@
   justify-content: flex-start;
   width: 25vh;
   height: 25vh;
+  padding: 10px;
+}
+
+.textInfo h4 {
+  text-decoration: underline;
 }
 /*
-.singleBookInfo img {
-
-}
-
-.singleBookInfo h1 {
-
-}
-
 .singleBookInfo h3 {
 
 }

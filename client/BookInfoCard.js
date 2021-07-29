@@ -9,7 +9,7 @@ function BookInfoCard(props) {
       </div>
       <div className={styles.textInfo}>
         <h4>{props.title}</h4>
-        <h6>{props.author}</h6>
+        <h5>{props.author}</h5>
       </div>
     </div>
   );

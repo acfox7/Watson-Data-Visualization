@@ -26,7 +26,17 @@ class Main extends React.Component {
         <h1>Book Data Loading ...</h1>
       </div>
     );
-    return <div id={styles.mainContainer}>{toRender}</div>;
+    return (
+      <React.Fragment>
+        <div id={styles.mainContainer}>
+          <h2>
+            Select a work of literature below to see an analysis of the work's
+            sentiments and emotions.
+          </h2>
+        </div>
+        <div id={styles.mainContainer}>{toRender}</div>
+      </React.Fragment>
+    );
   }
 }
 
