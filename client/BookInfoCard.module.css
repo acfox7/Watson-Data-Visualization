@@ -23,13 +23,13 @@
   width: 25vh;
   height: 25vh;
   padding: 10px;
+  color: #474747;
+}
+
+.textColor {
+  color: #474747;
 }
 
 .textInfo h4 {
   text-decoration: underline;
 }
-/*
-.singleBookInfo h3 {
-
-}
-*/

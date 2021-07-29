@@ -15,6 +15,7 @@ class Main extends React.Component {
         return (
           <BookInfoCard
             key={book.id}
+            id={book.id}
             title={book.title}
             author={book.author}
             imageURL={book.imageURL}
@@ -33,6 +34,7 @@ class Main extends React.Component {
             Select a work of literature below to see an analysis of the work's
             sentiments and emotions.
           </h2>
+          <h4>Built Utilizing IBM Watson's Natural Language Understanding.</h4>
         </div>
         <div id={styles.mainContainer}>{toRender}</div>
       </React.Fragment>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Navbar.module.css';
+import { Link } from 'react-router-dom';
 //import link here after router set up
 
 const Navbar = () => {
@@ -11,7 +12,9 @@ const Navbar = () => {
       <div className={styles.linkContainer}>
         {/* link to home
         link to try your own text */}
-        <a className={styles.link}>Home Placeholder</a>
+        <Link to="/" className={styles.link}>
+          Home
+        </Link>
         <a className={styles.link}>Try Your Own Placeholder</a>
       </div>
     </nav>

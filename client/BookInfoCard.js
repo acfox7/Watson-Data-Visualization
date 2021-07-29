@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './BookInfoCard.module.css';
+import { Link } from 'react-router-dom';
 
 function BookInfoCard(props) {
   return (
     <div className={styles.singleBookInfo}>
-      <div className={styles.bookImage}>
+      <Link to={`/book/${props.id}`} className={styles.bookImage}>
         <img src={props.imageURL} />
-      </div>
+      </Link>
       <div className={styles.textInfo}>
-        <h4>{props.title}</h4>
+        <Link to={`/book/${props.id}`} className={styles.textColor}>
+          <h4>{props.title}</h4>
+        </Link>
         <h5>{props.author}</h5>
       </div>
     </div>

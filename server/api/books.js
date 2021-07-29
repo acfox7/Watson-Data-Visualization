@@ -6,6 +6,29 @@ const { Book } = require('../db');
 //   //
 // });
 
+router.get('/:id', async (req, res, next) => {
+  try {
+    const bookId = req.params.id;
+    const book = await Book.findByPk(Number(bookId), {
+      attributes: [
+        'id',
+        'title',
+        'author',
+        'excerptTitle',
+        'sourceURL',
+        'imageURL',
+      ],
+    });
+    if (book === null) {
+      res.sendStatus(404);
+    } else {
+      res.json(book);
+    }
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get('/', async (req, res, next) => {
   try {
     const books = await Book.findAll({

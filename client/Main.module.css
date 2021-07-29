@@ -4,11 +4,14 @@
   align-content: space-between;
   flex-wrap: wrap;
   margin: 5vh;
+  color: #32110b;
   /* height: 100%; */
 }
 
-.graphsContainer {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+#mainContainer h2 {
+  text-align: center;
+}
+
+#mainContainer h2 {
+  text-align: center;
 }
