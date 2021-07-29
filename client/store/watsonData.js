@@ -1,11 +1,18 @@
 import axios from 'axios';
 
 const GET_WATSON_DATA = 'GET_WATSON_DATA';
+const RESET_DATA = 'REST_DATA';
 
 export const haveWatsonData = (data) => {
   return {
     type: GET_WATSON_DATA,
     data,
+  };
+};
+
+export const resetData = () => {
+  return {
+    type: RESET_DATA,
   };
 };
 
@@ -24,6 +31,8 @@ export default function watsonDataReducer(state = {}, action) {
   switch (action.type) {
     case GET_WATSON_DATA:
       return action.data;
+    case RESET_DATA:
+      return {};
     default:
       return state;
   }

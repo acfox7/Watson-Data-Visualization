@@ -9,14 +9,24 @@ class BarGraph extends React.Component {
   }
   componentDidMount() {
     const myGraphRef = this.GraphRef.current.getContext('2d');
+    const labels = [];
+    const data = [];
+
+    Object.keys(this.props.totalData).forEach((key) => {
+      labels.push(key);
+      data.push(this.props.totalData[key]);
+    });
+
     const newGraph = new Chart(myGraphRef, {
       type: 'bar',
       data: {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        labels: labels,
+        // labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         datasets: [
           {
-            label: 'First Dataset',
-            data: [10, 20, 30, 40, 50],
+            label: this.props.title,
+            data: data,
+            // data: [10, 20, 30, 40, 50],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(255, 159, 64, 0.2)',
