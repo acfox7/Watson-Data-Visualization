@@ -13,18 +13,38 @@ class SingleBookPage extends React.Component {
     this.props.getSingleBook(this.bookId);
   }
   render() {
-    return (
+    const toRender = this.props.book.id ? (
       <div>
-        <div>
-          <h1>Book Title</h1>
-          <h2>Book Author</h2>
-          <p>Link to Source</p>
+        <div className={styles.bookInfoContainer}>
+          <div className={styles.bookImage}>
+            <img src={this.props.book.imageURL} />
+          </div>
+          <div className={styles.bookText}>
+            <h1>{this.props.book.title}</h1>
+            <h2>{this.props.book.author}</h2>
+            <h4>
+              View the {'  '}
+              <a href={this.props.book.sourceURL} target="_blank">
+                Excerpt Analyzed
+              </a>
+            </h4>
+          </div>
         </div>
-        <div>
-          <p>Graphs Will Go here</p>
+        <div className={styles.graphsContainer}>
+          <BarGraph />
+          <BarGraph />
+          <BarGraph />
+          <BarGraph />
+          <BarGraph />
+          <BarGraph />
         </div>
       </div>
+    ) : (
+      <div id="Loading">
+        <h1>Book Data Loading ...</h1>
+      </div>
     );
+    return toRender;
 
     // <h1>Page Is Rendering with book id {this.bookId}</h1>;
   }

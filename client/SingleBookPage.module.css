@@ -1,3 +1,23 @@
+.bookInfoContainer {
+  display: flex;
+  padding: 30px 5px 30px 5px;
+  background-color: #9ec5ab;
+}
+
+.bookImage {
+  display: flex;
+  justify-content: center;
+  width: 30vh;
+  height: 30vh;
+  margin: 0;
+  padding: 0;
+}
+
+.bookText {
+  display: flex;
+  flex-direction: column;
+}
+
 .graphsContainer {
   display: flex;
   justify-content: space-around;
