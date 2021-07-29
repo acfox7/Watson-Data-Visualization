@@ -22,7 +22,7 @@ router.get('/:id/watsonData', async (req, res, next) => {
       },
       text: bookExcerpt,
     });
-    res.json(watsonData);
+    res.json(watsonData.result);
   } catch (error) {
     next(error);
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchBook } from './store/singleBook';
+import { fetchWatsonData } from './store/watsonData';
 import BarGraph from './BarGraph';
 import styles from './SingleBookPage.module.css';
 
@@ -11,6 +12,7 @@ class SingleBookPage extends React.Component {
   }
   componentDidMount() {
     this.props.getSingleBook(this.bookId);
+    this.props.getWatsonData(this.bookId);
   }
   render() {
     const toRender = this.props.book.id ? (
@@ -53,12 +55,14 @@ class SingleBookPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     book: state.book,
+    watsonData: state.watsonData,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getSingleBook: (bookId) => dispatch(fetchBook(bookId)),
+    getWatsonData: (bookId) => dispatch(fetchWatsonData(bookId)),
   };
 };
 
