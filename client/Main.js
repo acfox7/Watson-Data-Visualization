@@ -29,7 +29,7 @@ class Main extends React.Component {
     );
     return (
       <React.Fragment>
-        <div id={styles.mainContainer}>
+        <div id={styles.introduction}>
           <h2>
             Select a work of literature below to see an analysis of the work's
             sentiments and emotions.
