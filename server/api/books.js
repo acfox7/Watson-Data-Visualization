@@ -1,10 +1,32 @@
 const router = require('express').Router();
 const { Book } = require('../db');
+const { WatsonCall, getExcerptForCall } = require('./watson');
 
 //ADD ROUTES HERE
 // router.get('books/1', async (req, res, next) => {
 //   //
 // });
+
+router.get('/:id/watsonData', async (req, res, next) => {
+  try {
+    const bookId = req.params.id;
+    const bookExcerpt = await getExcerptForCall(bookId);
+    const watsonData = await WatsonCall({
+      features: {
+        entities: {
+          emotion: true,
+          sentiment: true,
+          limit: 6,
+        },
+        emotion: {},
+      },
+      text: bookExcerpt,
+    });
+    res.json(watsonData);
+  } catch (error) {
+    next(error);
+  }
+});
 
 router.get('/:id', async (req, res, next) => {
   try {

@@ -19,39 +19,23 @@ const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
 async function WatsonCall(analyzeParams) {
   try {
     const results = await naturalLanguageUnderstanding.analyze(analyzeParams);
-    console.log('Results: ', results.result);
-    console.log('Emotion: ', results.result.emotion);
+    return results;
   } catch (error) {
     console.log(error);
   }
 }
 
-async function getExcerptForTest(bookId) {
+async function getExcerptForCall(bookId) {
   try {
     const book = await Book.findByPk(bookId);
-    //console.log('Excerpt: ', book.excerpt);
     let condensedExcerpt = book.excerpt.replace(/[\r\n\t]/g, ' ');
-    //console.log(typeof condensedExcerpt);
     return condensedExcerpt;
   } catch (error) {
     console.log(error);
   }
 }
 
-getExcerptForTest(1).then((value) => {
-  const analyzeParams = {
-    features: {
-      entities: {
-        emotion: true,
-        sentiment: true,
-        limit: 6,
-      },
-      emotion: {},
-    },
-    text: value,
-  };
-
-  WatsonCall(analyzeParams);
-});
-//let hpExcerpt = getExcerptForTest(1);
-//console.log(hpExcerpt());
+module.exports = {
+  WatsonCall,
+  getExcerptForCall,
+};

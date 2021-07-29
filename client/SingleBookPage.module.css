@@ -16,6 +16,7 @@
 .bookText {
   display: flex;
   flex-direction: column;
+  color: #32110b;
 }
 
 .graphsContainer {
