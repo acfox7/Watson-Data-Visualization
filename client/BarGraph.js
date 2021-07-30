@@ -1,6 +1,7 @@
 import React from 'react';
 import Chart from 'chart.js';
 import styles from './Graph.module.css';
+import pattern from 'patternomaly';
 
 class BarGraph extends React.Component {
   constructor(props) {
@@ -24,32 +25,51 @@ class BarGraph extends React.Component {
         // labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         datasets: [
           {
-            label: this.props.title,
+            label: 'Emotions',
             data: data,
-            // data: [10, 20, 30, 40, 50],
+            // data: [10, 20, 30, 40, 50]
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(255, 159, 64, 0.2)',
-              'rgba(255, 205, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(201, 203, 207, 0.2)',
+              pattern.draw('dash', 'rgba(54, 162, 235, 0.2)'),
+              pattern.draw('disc', 'rgba(255, 205, 86, 0.2)'),
+              pattern.draw('zigzag', 'rgba(153, 102, 255, 0.2)'),
+              pattern.draw('cross', 'rgba(75, 192, 192, 0.2)'),
+              pattern.draw('square', 'rgba(255, 99, 132, 0.2)'),
             ],
             borderColor: [
-              'rgb(255, 99, 132)',
-              'rgb(255, 159, 64)',
-              'rgb(255, 205, 86)',
-              'rgb(75, 192, 192)',
               'rgb(54, 162, 235)',
+              'rgb(255, 205, 86)',
               'rgb(153, 102, 255)',
-              'rgb(201, 203, 207)',
+              'rgb(75, 192, 192)',
+              'rgb(255, 99, 132)',
             ],
             borderWidth: 1,
           },
         ],
       },
-      options: {},
+      options: {
+        layout: {
+          padding: {
+            left: 10,
+            right: 10,
+            top: 20,
+            bottom: 20,
+          },
+        },
+        title: {
+          display: true,
+          text: this.props.title,
+        },
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                stepSize: 0.05,
+              },
+            },
+          ],
+        },
+      },
     });
   }
   render() {

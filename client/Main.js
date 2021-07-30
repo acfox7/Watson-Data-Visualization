@@ -32,7 +32,7 @@ class Main extends React.Component {
         <div id={styles.introduction}>
           <h2>
             Select a work of literature below to see an analysis of the work's
-            sentiments and emotions.
+            conveyed emotions.
           </h2>
           <h4>
             Built Utilizing IBM Watson's Natural Language Understanding and
