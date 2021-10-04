@@ -12,10 +12,12 @@ const Navbar = () => {
       <div className={styles.linkContainer}>
         {/* link to home
         link to try your own text */}
-        <Link to="/" className={styles.link}>
+        <Link to='/' className={styles.link}>
           Home
         </Link>
-        <a className={styles.link}>Try Your Own Placeholder</a>
+        <Link to='/tryyourown' className={styles.link}>
+          Try Your Own Placeholder
+        </Link>
       </div>
     </nav>
   );

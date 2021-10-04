@@ -27,6 +27,20 @@ export const fetchWatsonData = (bookId) => {
   };
 };
 
+export const fetchUserTextData = (userText) => {
+  return async (dispatch) => {
+    try {
+      console.log('USER TEXT IN THUNK: ', userText);
+      const { data } = await axios.post('/api/usertext', {
+        text: userText,
+      });
+      dispatch(haveWatsonData(data));
+    } catch (error) {
+      console.log('Error getting Watson data from server: ', error);
+    }
+  };
+};
+
 export default function watsonDataReducer(state = {}, action) {
   switch (action.type) {
     case GET_WATSON_DATA:

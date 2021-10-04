@@ -29,7 +29,7 @@ class SingleBookPage extends React.Component {
           <React.Fragment>
             <BarGraph
               totalData={this.props.watsonData.emotion.document.emotion}
-              title="Overall Text Analysis"
+              title='Overall Text Analysis'
             />
             {this.props.watsonData.entities.map((entity, index) => (
               <BarGraph
@@ -54,7 +54,7 @@ class SingleBookPage extends React.Component {
             <h2>{this.props.book.author}</h2>
             <h4>
               View the {'  '}
-              <a href={this.props.book.sourceURL} target="_blank">
+              <a href={this.props.book.sourceURL} target='_blank'>
                 Excerpt Analyzed
               </a>
             </h4>
@@ -63,7 +63,7 @@ class SingleBookPage extends React.Component {
         <div className={styles.graphsContainer}>{graphsToRender}</div>
       </div>
     ) : (
-      <div className="Loading">
+      <div className='Loading'>
         <h1>Book Data Loading ...</h1>
       </div>
     );

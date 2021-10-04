@@ -1,0 +1,36 @@
+.userInputContainer {
+  display: flex;
+  padding: 30px 5px;
+  height: 400px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #9ec5ab;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.inputBox {
+  width: 80vw;
+  outline: none;
+  max-height: 200px;
+  margin: 10px;
+  font-size: 1em;
+}
+
+.button {
+  font-weight: bold;
+  padding: 10px 40px;
+  margin: 10px;
+}
+
+.graphsContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
